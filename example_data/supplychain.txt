@@ -1,0 +1,10 @@
+Supply Location	Supply Capacity	Destination	Transportation Cost ($)	Demand at Destination	Service Level Requirement (%)	Transportation Mode
+"Tyler, TX"	10000	"Los Angeles, CA"	2.78	6579	97	Truck
+"Tyler, TX"	10000	"Newark, NJ"	2.74	6091	100	Air
+"Tyler, TX"	10000	"Savannah, GA"	2.26	2957	96	Air
+"Midland, TX"	15000	"Los Angeles, CA"	2.75	6281	95	Truck
+"Midland, TX"	15000	"Newark, NJ"	1.97	3018	99	Air
+"Midland, TX"	15000	"Savannah, GA"	2.82	2613	96	Truck
+"Waco, TX"	8000	"Los Angeles, CA"	2.02	2933	96	Truck
+"Waco, TX"	8000	"Newark, NJ"	2.94	4434	95	Truck
+"Waco, TX"	8000	"Savannah, GA"	2.92	3222	97	Truck

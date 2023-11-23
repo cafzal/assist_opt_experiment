@@ -35,22 +35,51 @@ assistant = client.beta.assistants.create(
     }],
     model="gpt-3.5-turbo-1106")
 
-# Generate assistant response based on user input
-thread = client.beta.threads.create()
-message = client.beta.threads.messages.create(
-    thread_id=thread.id,
-    role="user",
-    content=f"Define a {problem_area} {problem_type} problem.")
+st.button("Start")
+if st.button:
+  # Generate assistant response based on user input
+  thread = client.beta.threads.create()
+  message = client.beta.threads.messages.create(
+      thread_id=thread.id,
+      role="user",
+      content=
+      f"Help define a {problem_area} {problem_type} problem where we aim to {objectives}."
+  )
 
-run = client.beta.threads.runs.create(thread_id=thread.id,
-                                      assistant_id=assistant.id,
-                                      instructions=".")
+  run = client.beta.threads.runs.create(thread_id=thread.id,
+                                        assistant_id=assistant.id,
+                                        instructions=".")
 
 # Click button to display assistant response
 st.button("Get response")
-if st.button:
+if st.button and 'thread' in locals():
   run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
   messages = client.beta.threads.messages.list(thread_id=thread.id)
 
   # Display message response to user
-  st.write(messages)
+  if messages:
+    st.write(messages)
+
+# # User can upload csv file
+# uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
+
+# # Display uploaded file
+# if uploaded_file is not None:
+#     df = pd.read_csv(uploaded_file)
+#     st.write(df)
+
+# # Upload file to openai with assistant purpose
+# file = client.files.create(
+#   file=open("uploaded_file.csv", "rb"),
+#   purpose='assistants'
+# )
+
+# thread = client.beta.threads.create(
+#   messages=[
+#     {
+#       "role": "user",
+#       "content": "Here are my decisions and constraints",
+#       "file_ids": [file.id]
+#     }
+#   ]
+# )

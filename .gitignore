@@ -6,3 +6,4 @@ env/
 poetry.lock
 pyproject.toml
 future.txt
+.config
