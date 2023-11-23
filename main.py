@@ -3,7 +3,7 @@ from openai import OpenAI
 import pymoo as pymoo
 import os
 
-st.title("Optimization Assistant")
+st.title("Optimization Assistant ")
 st.write(
     "This is an optimization assistant that helps domain experts define, select, and interpret multi-objective optimization problems."
 )
