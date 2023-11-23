@@ -3,3 +3,6 @@ env/
 .local/*
 .pythonlibs/
 .replit
+poetry.lock
+pyproject.toml
+future.txt
